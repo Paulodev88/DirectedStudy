@@ -1,10 +1,10 @@
 package Funcao;
 
-import Function.Entities.Product;
+import Funcao.Ultil.ProductService;
+import Funcao.Entities.Product;
 
 import java.util.ArrayList;
 import java.util.List;
-98154 xxx 5534
 
 public class Main {
 
@@ -17,5 +17,11 @@ public class Main {
         list.add(new Product("Tablet", 350.00));
         list.add(new Product("HD Case", 80.00));
 
+        ProductService ps = new ProductService();
+
+        double sum = ps.filteredSum(list, p-> p.getName().charAt(0)== 'T');
+
+        list.forEach(System.out::println);
+        System.out.println("Sum "+ sum);
     }
 }
